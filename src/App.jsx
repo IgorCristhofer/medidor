@@ -27,7 +27,7 @@ function App() {
           />
           
           <BtnAdicionar onClick={() => handleAdd(index)} />
-          <BtnDeletar onClick={() => handleDelet(item.id)} />
+          <BtnDeletar onClick={() => {list.length>1 && handleDelet(item.id)}} />
         </section>
       ))}
     </main>

@@ -25,6 +25,8 @@ function App() {
             onChange={(e) => handleChange(item.id, e.target.value)}
             className="border rounded-lg p-2 bg-sky-100"
           />
+
+          
           
           <BtnAdicionar onClick={() => handleAdd(index)} />
           <BtnDeletar onClick={() => {list.length>1 && handleDelet(item.id)}} />

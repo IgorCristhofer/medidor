@@ -1,11 +1,13 @@
 // estilo
 import "./App.css";
+
+//bibliotecas&hooks
 import { useState } from "react";
 import { BtnDeletar } from "./components/BtnDeletar";
 import { BtnAdicionar } from "./components/BtnAdicionar";
 import { adicionarItem, deletarItem, atualizarItem } from "./utils/listaLogica";
 
-export function App() {
+function App() {
   const [list, setList] = useState([{ id: crypto.randomUUID(), value: "" }]);
 
   // Funções que ligam a lógica ao estado do React
@@ -14,19 +16,22 @@ export function App() {
   const handleChange = (id, val) => setList(atualizarItem(list, id, val));
 
   return (
-    <div className="p-10 space-y-2">
+    <main className="p-10 space-y-2 bg-slate-700">
+      <h1>Valores</h1>
       {list.map((item, index) => (
-        <div key={item.id} className="flex gap-2">
+        <section key={item.id} className="flex gap-2 justify-center">
           <input 
             value={item.value} 
             onChange={(e) => handleChange(item.id, e.target.value)}
-            className="border p-2"
+            className="border rounded-lg p-2 bg-sky-100"
           />
           
           <BtnAdicionar onClick={() => handleAdd(index)} />
           <BtnDeletar onClick={() => handleDelet(item.id)} />
-        </div>
+        </section>
       ))}
-    </div>
+    </main>
   );
 }
+
+export default App;

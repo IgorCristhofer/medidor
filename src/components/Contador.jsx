@@ -16,7 +16,6 @@ const Contador = () => {
   const horaFormatada = tempo.toLocaleTimeString("pt-BR", {
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit", // Opcional
   });
 
   return <div className="text-2xl font-bold">Hora atual: {horaFormatada}</div>;

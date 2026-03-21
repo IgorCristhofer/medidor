@@ -6,8 +6,11 @@ import { useState } from "react";
 import { BtnDeletar } from "./components/BtnDeletar";
 import { BtnAdicionar } from "./components/BtnAdicionar";
 import { adicionarItem, deletarItem, atualizarItem } from "./utils/listaLogica";
+import { useContador } from "./hooks/useContador";
 
 function App() {
+  const hora = useContador(); // Pega a hora atualizada
+
   const [list, setList] = useState([{ id: crypto.randomUUID(), value: "" }]);
 
   // Funções que ligam a lógica ao estado do React
@@ -16,8 +19,9 @@ function App() {
   const handleChange = (id, val) => setList(atualizarItem(list, id, val));
 
   return (
-    <main className="p-10 space-y-2 bg-slate-700">
-      <h1>Valores</h1>
+    <main className="p-10 space-y-2 bg-slate-700 w-0.5">
+      <h1>{hora}</h1>
+
       {list.map((item, index) => (
         <section key={item.id} className="flex gap-2 justify-center">
           <input 
@@ -25,8 +29,6 @@ function App() {
             onChange={(e) => handleChange(item.id, e.target.value)}
             className="border rounded-lg p-2 bg-sky-100"
           />
-
-          
           
           <BtnAdicionar onClick={() => handleAdd(index)} />
           <BtnDeletar onClick={() => {list.length>1 && handleDelet(item.id)}} />

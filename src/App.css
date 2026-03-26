@@ -20,22 +20,22 @@ body {
 }
 
 h1{
-    color: azure;
-    font-size: 2.5rem;
-    text-align: center;
+  color: azure;
+  font-size: 2.5rem;
+  text-align: center;
 
 }
 
 .btnconf{
   /* alinhamento */
-  display: flex;
-  justify-content: center;
-  align-content: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   /* design */
-  border-radius: 10%;
-  width: 16px;
-  height: 16px;
+    border-radius: 10%;
+    width: 16px;
+    height: 16px;
   /* texto */
-  font-size: large;
-  color: whitesmoke;
+    font-size: large;
+    color: whitesmoke;
 }

@@ -19,7 +19,7 @@ function App() {
   const handleChange = (id, val) => setList(atualizarItem(list, id, val));
 
   return (
-    <main className="p-10 space-y-2 bg-slate-700 w-0.5">
+    <main className="p-10 space-y-2 bg-slate-700">
       <h1>{hora}</h1>
 
       {list.map((item, index) => (

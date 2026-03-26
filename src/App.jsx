@@ -19,8 +19,9 @@ function App() {
   const handleChange = (id, val) => setList(atualizarItem(list, id, val));
 
   return (
-    <main className="p-10 space-y-2 bg-slate-700">
-      <h1>{hora}</h1>
+    <main className="p-4 space-y-2 bg-slate-700 mt-3.5">
+      <h1>Timer</h1>
+      {hora}
 
       {list.map((item, index) => (
         <section key={item.id} className="flex gap-2 justify-center">

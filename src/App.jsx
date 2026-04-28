@@ -20,7 +20,7 @@ function App() {
 
   return (
     <main className="p-4 space-y-2 bg-slate-700 mt-3.5">
-      <h1>Timer</h1>
+      <h1>Lista</h1>
 
       {list.map((item, index) => (
         <section key={item.id} className="flex gap-2 justify-center">
